@@ -7,16 +7,48 @@ const controls = [...document.querySelectorAll(".slider-control")];
 const searchForm = document.getElementById("header-search");
 const searchInput = document.getElementById("site-search");
 const searchFeedback = document.getElementById("search-feedback");
+const currentPage = document.body.dataset.page || "home";
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 let activeSlide = 0;
 let sliderTimer;
 let feedbackTimer;
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const searchTargets = [
+    {
+        page: "home",
+        label: "Home",
+        href: "index.html",
+        terms: ["home", "landing", "main", "hero"]
+    },
+    {
+        page: "narrative",
+        label: "Narrative",
+        href: "narrative.html",
+        terms: ["narrative", "native", "mission", "cause", "storyline"]
+    },
+    {
+        page: "stories",
+        label: "Stories",
+        href: "stories.html",
+        terms: ["stories", "story", "journal", "impact"]
+    },
+    {
+        page: "support",
+        label: "Support",
+        href: "support.html",
+        terms: ["support", "donate", "donation", "partner", "give"]
+    }
+];
 
 function setFeedback(message, isError = false) {
-    clearTimeout(feedbackTimer);
+    if (!searchFeedback) {
+        return;
+    }
+
+    window.clearTimeout(feedbackTimer);
     searchFeedback.textContent = message;
-    searchFeedback.style.color = isError ? "#cf4b3c" : "#09a46c";
+    searchFeedback.style.color = isError ? "#cf4b3c" : "#19a974";
     feedbackTimer = window.setTimeout(() => {
         searchFeedback.textContent = "";
     }, 3200);
@@ -31,13 +63,24 @@ function closeMenu() {
     headerPanel.classList.remove("is-open");
 }
 
-function setActiveLink(sectionId) {
+function setActiveLink() {
     navLinks.forEach((link) => {
-        link.classList.toggle("is-active", link.getAttribute("href") === `#${sectionId}`);
+        const isActive = link.dataset.page === currentPage;
+        link.classList.toggle("is-active", isActive);
+
+        if (isActive) {
+            link.setAttribute("aria-current", "page");
+        } else {
+            link.removeAttribute("aria-current");
+        }
     });
 }
 
 function showSlide(nextIndex) {
+    if (slides.length === 0) {
+        return;
+    }
+
     activeSlide = (nextIndex + slides.length) % slides.length;
 
     slides.forEach((slide, index) => {
@@ -62,6 +105,8 @@ function restartSlider() {
     }, 5000);
 }
 
+setActiveLink();
+
 if (navToggle && headerPanel) {
     navToggle.addEventListener("click", () => {
         const expanded = navToggle.getAttribute("aria-expanded") === "true";
@@ -71,13 +116,7 @@ if (navToggle && headerPanel) {
 }
 
 navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        const targetId = link.getAttribute("href")?.replace("#", "");
-        if (targetId) {
-            setActiveLink(targetId);
-        }
-        closeMenu();
-    });
+    link.addEventListener("click", closeMenu);
 });
 
 controls.forEach((control) => {
@@ -90,8 +129,7 @@ controls.forEach((control) => {
 
 dots.forEach((dot) => {
     dot.addEventListener("click", () => {
-        const nextIndex = Number(dot.dataset.dot || 0);
-        showSlide(nextIndex);
+        showSlide(Number(dot.dataset.dot || 0));
         restartSlider();
     });
 });
@@ -101,46 +139,13 @@ if (slides.length > 0) {
     restartSlider();
 }
 
-const sections = navLinks
-    .map((link) => {
-        const target = link.getAttribute("href");
-        return target ? document.querySelector(target) : null;
-    })
-    .filter(Boolean);
-
-if ("IntersectionObserver" in window && sections.length > 0) {
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveLink(entry.target.id);
-                }
-            });
-        },
-        {
-            rootMargin: "-35% 0px -50% 0px",
-            threshold: 0.1
-        }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-}
-
 if (searchForm && searchInput) {
-    const searchTargets = [
-        { id: "home", label: "Home", terms: ["home", "hero", "campaign", "header"] },
-        { id: "narrative", label: "Narrative", terms: ["narrative", "food", "cause", "sustainability", "education"] },
-        { id: "impact", label: "Impact", terms: ["impact", "nutrition", "trust", "tax", "80g"] },
-        { id: "stories", label: "Stories", terms: ["stories", "story", "promise", "childhood"] },
-        { id: "support", label: "Support", terms: ["support", "donate", "partner", "celebrate"] }
-    ];
-
     searchForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
         const query = searchInput.value.trim().toLowerCase();
         if (!query) {
-            setFeedback("Try: home, narrative, impact, stories, or support.", true);
+            setFeedback("Try home, narrative, stories, or support.", true);
             return;
         }
 
@@ -149,16 +154,16 @@ if (searchForm && searchInput) {
         );
 
         if (!match) {
-            setFeedback("No section found. Try home, narrative, impact, stories, or support.", true);
+            setFeedback("No page found. Try home, narrative, stories, or support.", true);
             return;
         }
 
-        const target = document.getElementById(match.id);
-        if (target) {
-            target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
-            setActiveLink(match.id);
-            setFeedback(`Jumped to ${match.label}.`);
+        if (match.page === currentPage) {
+            setFeedback(`You are already on ${match.label}.`);
             closeMenu();
+            return;
         }
+
+        window.location.href = match.href;
     });
 }

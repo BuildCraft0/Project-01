@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshaya Patra | Nourishing Futures</title>
+    <title>Akshaya Patra | Home</title>
+    <link rel="preconnect" href="https://images.squarespace-cdn.com">
+    <link rel="preconnect" href="https://cdn.nur.kz">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
     <div class="page-shell">
         <header class="site-header">
             <div class="container header-inner">
-                <a class="brand" href="#home" aria-label="Akshaya Patra home">
+                <a class="brand" href="index.html" aria-label="Akshaya Patra home">
                     <img src="Images/logo.png" alt="Akshaya Patra logo">
                 </a>
 
@@ -22,18 +24,17 @@
 
                 <div class="header-panel" id="site-menu">
                     <nav class="site-nav" aria-label="Primary navigation">
-                        <a class="is-active" href="#home">Home</a>
-                        <a href="#narrative">Narrative</a>
-                        <a href="#impact">Impact</a>
-                        <a href="#stories">Stories</a>
-                        <a href="#support">Support</a>
+                        <a href="index.html" data-page="home">Home</a>
+                        <a href="narrative.html" data-page="narrative">Narrative</a>
+                        <a href="stories.html" data-page="stories">Stories</a>
+                        <a href="support.html" data-page="support">Support</a>
                     </nav>
 
                     <div class="header-tools">
                         <form class="header-search" id="header-search" role="search">
-                            <label class="sr-only" for="site-search">Search sections</label>
-                            <input id="site-search" name="search" type="search" placeholder="Search stories, causes, impact" autocomplete="off">
-                            <button type="submit">Search</button>
+                            <label class="sr-only" for="site-search">Search pages</label>
+                            <input id="site-search" name="search" type="search" placeholder="Search home, narrative, stories, support" autocomplete="off">
+                            <button type="submit">Go</button>
                         </form>
                         <p class="search-feedback" id="search-feedback" aria-live="polite"></p>
                     </div>
@@ -42,35 +43,55 @@
         </header>
 
         <main>
-            <section class="hero-section" id="home">
-                <div class="container">
+            <section class="page-hero page-hero--home">
+                <div class="container hero-grid">
                     <div class="hero-copy">
-                        <div class="hero-copy__text">
-                            <p class="eyebrow">Unlimited food for education</p>
-                            <h1>Care that nourishes children, elders, and the future they deserve.</h1>
+                        <p class="eyebrow">Unlimited food for education</p>
+                        <h1>One mission, many futures nourished with dignity.</h1>
+                        <p class="hero-summary">
+                            This homepage introduces the Akshaya Patra story as a movement that connects meals, education, community trust, and long-term change.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="support.html">Support the mission</a>
+                            <a class="btn btn-secondary" href="narrative.html">Read the narrative</a>
                         </div>
 
-                        <div class="hero-copy__aside">
-                            <p class="lead">
-                                Akshaya Patra brings together trusted meal programs, education support, and long-term social impact through one unified mission.
-                            </p>
-
-                            <div class="hero-actions">
-                                <a class="btn btn-primary" href="#support">Support the mission</a>
-                                <a class="btn btn-secondary" href="#narrative">Explore narrative</a>
-                            </div>
+                        <div class="hero-stat-row">
+                            <article class="hero-stat">
+                                <strong>25+</strong>
+                                <span>years of sustained public trust</span>
+                            </article>
+                            <article class="hero-stat">
+                                <strong>Daily</strong>
+                                <span>nourishment that keeps children connected to learning</span>
+                            </article>
                         </div>
                     </div>
 
-                    <div class="hero-stage" aria-label="Campaign highlights">
-                        <article class="hero-slide is-active" data-slide="0">
-                            <img src="Images/slide1.jpg" alt="Akshaya Patra campaign for nourishing elderly mothers with daily meals">
+                    <div class="hero-slider" aria-label="Akshaya Patra highlights">
+                        <article class="hero-slide is-active">
+                            <div class="media-cover" style="--image:url('https://images.squarespace-cdn.com/content/v1/536a5888e4b00eb13d91423a/1659445428794-OX0CXXG5NZYES7ZX3AI8/IMG_7058.jpeg');" role="img" aria-label="Children sitting together in a preschool supported learning environment"></div>
+                            <div class="slide-overlay">
+                                <p class="slide-kicker">Preschool readiness</p>
+                                <h2>Support begins before the classroom journey fully starts.</h2>
+                            </div>
                         </article>
-                        <article class="hero-slide" data-slide="1">
-                            <img src="Images/slide2.jpg" alt="Children in school uniforms highlighted in an Akshaya Patra support campaign">
+
+                        <article class="hero-slide">
+                            <div class="media-cover" style="--image:url('https://images.squarespace-cdn.com/content/v1/536a5888e4b00eb13d91423a/1659436718221-VFOZ4K7F36OJOO4K39JK/IMG_7336.jpg');" role="img" aria-label="A teacher guiding children in a bright classroom"></div>
+                            <div class="slide-overlay">
+                                <p class="slide-kicker">Learning support</p>
+                                <h2>Focused guidance helps children stay present, confident, and engaged.</h2>
+                            </div>
                         </article>
-                        <article class="hero-slide" data-slide="2">
-                            <img src="Images/slide3.jpg" alt="Children receiving a promise of meals in an Akshaya Patra campaign">
+
+                        <article class="hero-slide">
+                            <div class="media-cover" style="--image:url('https://images.squarespace-cdn.com/content/v1/536a5888e4b00eb13d91423a/1660217101926-XVSJSJWUNPPFZID9H8QS/WhatsApp%2BImage%2B2022-07-29%2Bat%2B10.47.57%2BAM.jpeg');" role="img" aria-label="Children interacting with donated school supplies"></div>
+                            <div class="slide-overlay">
+                                <p class="slide-kicker">Tools for growth</p>
+                                <h2>Meals, supplies, and care together create more complete support.</h2>
+                            </div>
                         </article>
 
                         <button class="slider-control prev" type="button" data-direction="prev" aria-label="Previous slide">
@@ -86,224 +107,94 @@
                             <button type="button" data-dot="2" aria-label="Go to slide 3" aria-selected="false"></button>
                         </div>
                     </div>
-
-                    <div class="trust-strip">
-                        <article class="trust-item">
-                            <span class="trust-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <circle cx="8" cy="8" r="3"></circle>
-                                    <circle cx="16.5" cy="9" r="2.5"></circle>
-                                    <path d="M3.5 19c.8-2.6 3-4 5.5-4s4.7 1.4 5.5 4"></path>
-                                    <path d="M13 18.5c.5-1.9 2.1-3 4.2-3 1.6 0 3 .6 4 2"></path>
-                                </svg>
-                            </span>
-                            <div>
-                                <h3>2 Nutritious Meals Every Day</h3>
-                                <p>Dependable nourishment that strengthens health, dignity, and daily resilience.</p>
-                            </div>
-                        </article>
-
-                        <article class="trust-item">
-                            <span class="trust-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 3l7 3v5c0 4.1-2.8 7.7-7 8.9-4.2-1.2-7-4.8-7-8.9V6l7-3z"></path>
-                                    <path d="M9 12l2 2 4-4"></path>
-                                </svg>
-                            </span>
-                            <div>
-                                <h3>Transparent and Trusted</h3>
-                                <p>Programs are designed to keep the mission clear, measurable, and community-centered.</p>
-                            </div>
-                        </article>
-
-                        <article class="trust-item">
-                            <span class="trust-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M6 4h9l3 3v13H6z"></path>
-                                    <path d="M15 4v3h3"></path>
-                                    <path d="M9 11h6"></path>
-                                    <path d="M9 15h6"></path>
-                                </svg>
-                            </span>
-                            <div>
-                                <h3>Tax Exemption under 80G</h3>
-                                <p>Supporters can contribute with confidence while helping scale meaningful impact.</p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="mission-banner">
-                        <p>Together, let&apos;s ensure every child and aged mother is well nourished.</p>
-                        <a class="mission-link" href="#support">Become a supporter</a>
-                    </div>
                 </div>
             </section>
 
-            <section class="narrative-section" id="narrative">
+            <section class="page-section page-section--tight">
                 <div class="container">
-                    <div class="section-intro centered">
-                        <p class="eyebrow">Akshaya Patra Narrative</p>
-                        <h2>Food, sustainability, and education move forward together.</h2>
-                        <p>
-                            The mission goes beyond serving meals. Each intervention connects immediate nourishment with stronger learning outcomes and more sustainable communities.
-                        </p>
+                    <div class="section-heading">
+                        <p class="eyebrow">Explore the site</p>
+                        <h2>Each page now has its own design and purpose.</h2>
                     </div>
 
-                    <div class="narrative-layout">
-                        <article class="narrative-card narrative-card--primary">
-                            <img src="Images/key-food2.png" alt="Food for education primary cause">
-                            <p>
-                                School meal support reduces classroom hunger and helps children stay present, focused, and ready to learn every day.
-                            </p>
-                            <a href="#impact">Why this matters</a>
+                    <div class="route-grid">
+                        <article class="route-card route-card--navy">
+                            <span class="route-index">01</span>
+                            <h3>Narrative</h3>
+                            <p>See how the mission is framed through food, continuity, and long-term educational hope.</p>
+                            <a href="narrative.html">Open page</a>
                         </article>
 
-                        <div class="narrative-orbit">
-                            <img src="Images/key-circle.png" alt="Social causes supported by TAPF">
-                        </div>
-
-                        <div class="narrative-stack">
-                            <article class="narrative-card narrative-card--green">
-                                <img src="Images/key-sustainability2.png" alt="Sustainability ancillary cause">
-                                <p>
-                                    Scalable systems and community-aligned operations help keep impact responsible, efficient, and built for continuity.
-                                </p>
-                                <a href="#stories">See the story</a>
-                            </article>
-
-                            <article class="narrative-card narrative-card--gold">
-                                <img src="Images/key-educationmdm2.png" alt="Education beyond mid-day meal ancillary cause">
-                                <p>
-                                    When children receive dependable nourishment, they gain the stability needed to pursue education beyond the basics.
-                                </p>
-                                <a href="#support">Join the effort</a>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="impact-section" id="impact">
-                <div class="container impact-grid">
-                    <div class="impact-copy">
-                        <p class="eyebrow">Impact that compounds</p>
-                        <h2>Every dependable meal can unlock a chain of better outcomes.</h2>
-                        <p>
-                            Nourishment is the entry point, but the ripple effect reaches attendance, dignity, family confidence, and a stronger sense of possibility for the future.
-                        </p>
-
-                        <div class="impact-points">
-                            <article class="impact-point">
-                                <strong>Nutrition first</strong>
-                                <p>Healthy meals create the energy and consistency children and elders need for daily life.</p>
-                            </article>
-
-                            <article class="impact-point">
-                                <strong>Trust-driven delivery</strong>
-                                <p>Transparent systems make the work dependable for donors, partners, and the communities receiving support.</p>
-                            </article>
-
-                            <article class="impact-point">
-                                <strong>Human-centered growth</strong>
-                                <p>The mission expands in ways that protect dignity while building stronger long-term educational opportunity.</p>
-                            </article>
-                        </div>
-                    </div>
-
-                    <div class="stats-grid">
-                        <article class="stat-card">
-                            <strong>25+</strong>
-                            <span>years of sustained social impact reflected across the campaign story</span>
+                        <article class="route-card route-card--green">
+                            <span class="route-index">02</span>
+                            <h3>Stories</h3>
+                            <p>Move through magazine-style cards that highlight lived moments and visible outcomes.</p>
+                            <a href="stories.html">Open page</a>
                         </article>
 
-                        <article class="stat-card stat-card--accent">
-                            <strong>2</strong>
-                            <span>nutritious meals every day highlighted as a promise of care and continuity</span>
-                        </article>
-
-                        <article class="stat-card stat-card--green">
-                            <strong>3</strong>
-                            <span>connected cause areas: food, sustainability, and education</span>
-                        </article>
-
-                        <article class="stat-card">
-                            <strong>80G</strong>
-                            <span>tax exemption messaging that supports confident giving and participation</span>
+                        <article class="route-card route-card--gold">
+                            <span class="route-index">03</span>
+                            <h3>Support</h3>
+                            <p>Give, partner, or contribute to campaigns through a conversion-focused support layout.</p>
+                            <a href="support.html">Open page</a>
                         </article>
                     </div>
                 </div>
             </section>
 
-            <section class="promise-section" id="stories">
-                <div class="container promise-grid">
-                    <div class="promise-visual">
-                        <img src="Images/slide3.jpg" alt="Children being supported through a promise of meals campaign">
-                    </div>
-
-                    <div class="promise-copy">
-                        <p class="eyebrow">Stories of change</p>
-                        <h2>A promise of meals helps protect a happier childhood.</h2>
+            <section class="page-section">
+                <div class="container feature-split">
+                    <div class="feature-copy">
+                        <p class="eyebrow">Why the homepage leads this way</p>
+                        <h2>The first page is designed like a campaign window into the full mission.</h2>
                         <p>
-                            Reliable nourishment does more than solve hunger for the day. It helps children stay connected to school, routine, and the confidence to keep going.
+                            Instead of acting as a long single-page site, the homepage now introduces the larger ecosystem. It sets the tone, shows real human moments, and sends visitors to deeper page-level journeys.
                         </p>
 
-                        <ul class="promise-list">
-                            <li>Supports attendance and classroom readiness.</li>
-                            <li>Creates a stronger foundation for learning and wellbeing.</li>
-                            <li>Turns everyday giving into visible, human impact.</li>
-                        </ul>
+                        <div class="check-list">
+                            <p>Responsive layout with separate page navigation.</p>
+                            <p>Online-hosted storytelling imagery to keep the visuals richer.</p>
+                            <p>Clear pathways into narrative, stories, and support.</p>
+                        </div>
+                    </div>
 
-                        <a class="btn btn-primary" href="#support">Join the effort</a>
+                    <div class="mosaic">
+                        <figure class="mosaic-card mosaic-card--large">
+                            <div class="media-cover" style="--image:url('https://images.squarespace-cdn.com/content/v1/536a5888e4b00eb13d91423a/1659445430431-GRQ0IA5UIKPGXF2FUV7O/IMG_3925.jpeg');" role="img" aria-label="Young students gathered in a preschool environment"></div>
+                        </figure>
+                        <figure class="mosaic-card">
+                            <div class="media-cover" style="--image:url('https://images.squarespace-cdn.com/content/v1/536a5888e4b00eb13d91423a/1659436789025-YUEYE3OEK8UP31085TT9/IMG_6709.JPG');" role="img" aria-label="Teacher helping a child in class"></div>
+                        </figure>
+                        <figure class="mosaic-card">
+                            <div class="media-cover" style="--image:url('https://images.squarespace-cdn.com/content/v1/536a5888e4b00eb13d91423a/1659445477440-W3C16ONK7BA2G8RU9MYS/IMG_7070.JPG');" role="img" aria-label="Children learning in an early education setting"></div>
+                        </figure>
                     </div>
                 </div>
             </section>
 
-            <section class="support-section" id="support">
-                <div class="container">
-                    <div class="section-intro centered">
-                        <p class="eyebrow">Get involved</p>
-                        <h2>Choose how you want to strengthen the mission.</h2>
-                        <p>
-                            Whether you contribute meals, celebrate a special day through giving, or become a long-term partner, every action helps the mission stay consistent.
-                        </p>
+            <section class="page-banner">
+                <div class="container banner-inner">
+                    <div>
+                        <p class="eyebrow">Ready to continue</p>
+                        <h2>Walk into the deeper story page by page.</h2>
                     </div>
-
-                    <div class="support-grid">
-                        <article class="support-card">
-                            <h3>Donate for meals</h3>
-                            <p>Support the most direct path to nourishment with a contribution focused on daily meal security.</p>
-                            <a href="#home">Contribute now</a>
-                        </article>
-
-                        <article class="support-card">
-                            <h3>Celebrate with purpose</h3>
-                            <p>Turn birthdays, milestones, and special moments into opportunities to extend hope to more children.</p>
-                            <a href="#stories">View campaigns</a>
-                        </article>
-
-                        <article class="support-card">
-                            <h3>Partner for impact</h3>
-                            <p>Collaborate on long-term community support through aligned, transparent, and mission-led engagement.</p>
-                            <a href="#impact">Explore partnerships</a>
-                        </article>
-                    </div>
+                    <a class="btn btn-primary" href="narrative.html">Start with Narrative</a>
                 </div>
             </section>
         </main>
 
-        <footer class="footer">
+        <footer class="site-footer">
             <div class="container footer-inner">
                 <div class="footer-brand">
                     <img src="Images/logo.png" alt="Akshaya Patra logo">
-                    <p>Nourishing lives through trusted, mission-led social impact.</p>
+                    <p>Multi-page concept for Home, Narrative, Stories, and Support with online-loaded images.</p>
                 </div>
 
                 <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#narrative">Narrative</a>
-                    <a href="#impact">Impact</a>
-                    <a href="#stories">Stories</a>
-                    <a href="#support">Support</a>
+                    <a href="index.html">Home</a>
+                    <a href="narrative.html">Narrative</a>
+                    <a href="stories.html">Stories</a>
+                    <a href="support.html">Support</a>
                 </div>
             </div>
         </footer>
