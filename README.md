@@ -96,31 +96,7 @@ flowchart LR
     I --> Q[key-sustainability2.png]
 ```
 
-## Folder Structure
 
-```text
-Project-01/
-|-- index.html
-|-- narrative.html
-|-- stories.html
-|-- support.html
-|-- style.css
-|-- script.js
-|-- README.md
-|-- home-check.png
-|-- narrative-check.png
-|-- stories-check.png
-|-- support-check.png
-`-- Images/
-    |-- logo.png
-    |-- slide1.jpg
-    |-- slide2.jpg
-    |-- slide3.jpg
-    |-- key-circle.png
-    |-- key-food2.png
-    |-- key-educationmdm2.png
-    `-- key-sustainability2.png
-```
 
 ## Tech Stack
 
