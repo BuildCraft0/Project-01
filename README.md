@@ -2,11 +2,6 @@
 
 An interactive multi-page website concept for **Akshaya Patra**, designed to present the mission through storytelling, visual impact, and support-focused user journeys.
 
-## Project Preview
-
-<p align="center">
-  <img src="./home-check.png" alt="Akshaya Patra homepage preview" width="85%">
-</p>
 
 ## Pictorial Images
 
